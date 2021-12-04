@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Sr No:</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Teacher</th>
+      <th scope="col">Description</th>
+      <th scope="col">Time</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <p>{{entries}}</p>
+    {% for entry in entries %}
+    <tr>
+      <th scope="row">{{entry.id}}</th>
+      <td>{{entry.subject}}</td>
+      <td>{{entry.teacher}}</td>
+      <td>{{entry.desc}}</td>
+      <td>{{entry.time}}</td>
+    </tr>
+    {% else %}
+    <li><em>Unbelievable. No entries here so far</em>
+      {% endfor %}
+  </tbody>
+</table>
+
+
+{% endblock %}
